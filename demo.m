@@ -7,13 +7,7 @@ datanames = {'arrhythmia' 'gastroenterology' 'LSVT_voice_rehabilitation' 'Person
 for id = 1:10
     data= load_data( datanames(id) );
     N = 2; % N-fold cross-validation
-    K = 10; % K nearest neighbors
     [Samplenum, dim] = size(data);
-    
-    Accuracy = zeros(1,N);
-    MeanAccuracy_all = zeros(1,K);
-    MeanError_all = zeros(1,K); 
-
     Solution_no=8; %Number of search solutions
     M_Iter=100;    %Maximum number of iterations
     tic
@@ -25,11 +19,11 @@ for id = 1:10
         test = iristest(:,1:dim-1,:);
         testlabel = iristest(:,dim,:);  
         
-        disp(['id£º',num2str(id),'  times£º', num2str(times_id)]);      
+        disp(['idÂ£Âº',num2str(id),'  timesÂ£Âº', num2str(times_id)]);      
         [Best_FF,Best_P,Conv_curve,accuracy_curve,iter]=PBAOA(Solution_no,M_Iter,dim-1,4,5); 
         
-        result_all(times_id,(3*id-2):(3*id-1)) = accuracy_curve(:,M_Iter);
-        result_all(times_id,3*id) = Conv_curve(M_Iter);
+        result_all(times_id,(3*id-2):(3*id-1)) = accuracy_curve(:,iter-1);
+        result_all(times_id,3*id) = Conv_curve(iter-1);
         disp(['x[',num2str(Best_P),']=',num2str(result_all(times_id,3*id))]);   
     end
     result_mean = mean(result_all,1);    
