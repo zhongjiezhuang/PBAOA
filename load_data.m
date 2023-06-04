@@ -20,6 +20,14 @@ elseif strcmp(dataname,'warpPIE10P') % 19
     load dataset/warpPIE10P.mat
 elseif strcmp(dataname,'Yale') % 20
     load dataset/Yale.mat
+elseif strcmp(dataname,'CNAE_9') % CNAE_9
+    load dataset/CNAE9.mat
+elseif strcmp(dataname,'COIL20') % COIL20
+    load dataset/COIL20.mat
+elseif strcmp(dataname,'lung') % lung
+    load dataset/lung.mat
+elseif strcmp(dataname,'TOX_171') % TOX_171
+    load dataset/TOX_171.mat        
 end
 D = data;
 
