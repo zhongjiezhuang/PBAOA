@@ -5,6 +5,7 @@ result_all = zeros(times_count,dataset_num*3); % 1,2,3 cloumns is the error,num,
 result_all2 = zeros(times_count,dataset_num*3); % 1,2,3 cloumns is the error,num,fitness of the first dataset
 result_conclude = zeros(dataset_num*2,4); %The first row is the mean value of the first dataset, the second row is the std of the first dataset
 result_conclude2 = zeros(dataset_num*2,4);%The first row is the mean value of the first dataset, the second row is the std of the first dataset
+
 datanames = {'arrhythmia' 'gastroenterology' 'LSVT_voice_rehabilitation' 'PersonGait' 'SCADI' 'Urban_land_cover' 'ORL' 'warpAR10P' 'warpPIE10P' 'Yale' 'CNAE_9' 'COIL20' 'lung' 'TOX_171'};
 for id = 1:14
     data= load_data( datanames(id) );
