@@ -30,6 +30,5 @@ elseif strcmp(dataname,'TOX_171') % TOX_171
     load dataset/TOX_171.mat        
 end
 D = data;
-
 end
 
